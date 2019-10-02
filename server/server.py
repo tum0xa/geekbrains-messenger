@@ -20,11 +20,11 @@ class Server:
             print(f'Request for connection from {address} ')
             client.send('I see you'.encode('ascii'))
             client.close()
-            
+
     def send_message(self):
         pass
 
-    def recieve_message(self):
+    def receive_message(self):
         pass
 
     def handle_message(self, message):
