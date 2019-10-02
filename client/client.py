@@ -1,6 +1,6 @@
 from socket import socket, AF_INET, SOCK_STREAM
 
-from client.settings import *
+from settings import *
 
 
 class Client:

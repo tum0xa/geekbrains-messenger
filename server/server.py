@@ -1,6 +1,8 @@
+import json
 from socket import socket, AF_INET, SOCK_STREAM
+from time import time
 
-from server.settings import *
+from settings import *
 
 
 class Server:
@@ -27,5 +29,20 @@ class Server:
     def receive_message(self):
         pass
 
-    def handle_message(self, message):
-        pass
+    def jim_response(self, response_code, alert=None, error=None)
+        response_time = int(time())
+        response = {"response": response_code, "time": response_time }
+        if alert:
+            response.update({"alert": alert})
+        elif error:
+            response.update({"alert": alert})
+        return json.loads(response)
+
+    def handle_message(self, address, message):
+        print(f'Message: {message.decode("utf-8")} was sent by client from address {address}')
+
+
+if __name__ == '__main__':
+    server = Server()
+    server. connect()
+    server.run()
